@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="net.minigab.native-events"
+    version="0.0.1">
+	<name>cordova native events</name>
+	<description>Trigger native touch events</description>
+	<author>Mini Gab</author>
+	<license>MIT</license>
+	<platform name="android">
+	
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NativeEvents" >
+                <param name="android-package" value="net.minigab.nativeevents.NativeEvents"/>
+            </feature>
+        </config-file>
+		
+		<js-module src="www/nativeevents.js" name="nativeevents" >
+			<clobbers target="cordova.plugins.NativeEvents" />
+		</js-module>
+		<source-file src="src/android/NativeEvents.java" target-dir="src/net/minigab/nativeevents/" />
+	</platform>
+</plugin>
